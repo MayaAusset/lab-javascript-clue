@@ -73,22 +73,6 @@ const suspectsArray = [
 
 // Rooms Collection
 const roomsArray = [
-    {name: 'rope' , weight: 10},
-    {name: 'knife' , weight: 8},
-    {name: 'candlestick' , weight: 2},
-    {name: 'dumbbell' , weight: 30},
-    {name: 'poison' , weight: 2},
-    {name: 'axe' , weight: 15},
-    {name: 'bat' ,weight: 13},
-    {name: 'trophy' , weight: 25},
-    {name: 'pistol' , weight: 20}
-];
-
-//console.log(roomsArray)
-
-// Weapons Collection
-const weaponsArray = [
-    
     {name: 'Dining Room'},
     {name: 'Conservatory'},
     {name: 'Kitchen'},
@@ -106,7 +90,22 @@ const weaponsArray = [
     {name: 'Patio'}
 ];
 
-console.log(weaponsArray);
+//console.log(roomsArray)
+
+// Weapons Collection
+const weaponsArray = [
+    {name: 'rope' , weight: 10},
+    {name: 'knife' , weight: 8},
+    {name: 'candlestick' , weight: 2},
+    {name: 'dumbbell' , weight: 30},
+    {name: 'poison' , weight: 2},
+    {name: 'axe' , weight: 15},
+    {name: 'bat' ,weight: 13},
+    {name: 'trophy' , weight: 25},
+    {name: 'pistol' , weight: 20}
+];
+
+//console.log(weaponsArray);
 // ITERATION 2
 
 function selectRandom (arr){
@@ -120,6 +119,68 @@ function selectRandom (arr){
   };
 
 
+  /*function pickMystery(){
+    const mystery = {
+      suspect: selectRamdom(suspectsArray),
+      weapon: selectRamdom(weaponsArray),
+      room: selectRamdom(roomsArray)
+    }
+   
+    return mystery
+   
+   };
+   */
+
+
+
+
+function pickMystery(){
+    const mystery = {
+      suspect: selectRamdom(suspectsArray),
+      weapon: selectRamdom(weaponsArray),
+      room: selectRamdom(roomsArray)
+    }
+    const pickedMystery = {
+      suspect: mystery.suspect.firstName,
+      weapon: mystery.weapon.name,
+      room: mystery.room.name
+    }
+    return pickedMystery
+   };
+
+pickMystery()
 
 
 // ITERATION 3
+
+/*
+
+function revealMystery(obj){
+    const mystery = {
+     suspect: selectRamdom(suspectsArray),
+     weapon: selectRamdom(weaponsArray),
+     room: selectRamdom(roomsArray)
+   }
+    
+   console.log(mystery.suspect.firstName, mystery.suspect.lastName + 'killed Mr.Bobby using the '+ mystery.weapon.name + ' in the '+ mystery.room.name + '!' )
+  };
+  */
+
+ function revealMystery(obj){
+    const mystery = {
+     suspect: selectRamdom(suspectsArray),
+     weapon: selectRamdom(weaponsArray),
+     room: selectRamdom(roomsArray)
+   }
+   let name =  mystery.suspect.firstName;
+   let surname = mystery.suspect.lastName;
+   let weapon = mystery.weapon.name;
+   let room = mystery.room.name;
+  
+  let bigReveal = `${name} ${surname}killed Mr.Bobby using the ${weapon} in the ${room}!`;
+   /*console.log(mystery.suspect.firstName, mystery.suspect.lastName + 'killed Mr.Bobby using the '+ mystery.weapon.name + ' in the '+ mystery.room.name + '!' )*/
+  
+   return bigReveal
+  };
+
+  //revealMystery()
